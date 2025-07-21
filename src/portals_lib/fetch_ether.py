@@ -1,4 +1,4 @@
-from portals_lib import create_client_ether
+from .client_portal import create_client_ether
 
 try:
     import uasyncio as asyncio

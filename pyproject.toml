@@ -1,6 +1,6 @@
 [project]
 name = "portals-lib"
-version = "0.0.4"
+version = "0.0.5"
 authors = [{ name = "Sergey Shkatula", email = "sergey@ceil.dev" }]
 description = "Portals"
 keywords = ["portals", "portal", "interoperation", "functional"]
