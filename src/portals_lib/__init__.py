@@ -7,4 +7,4 @@ from .promised_value import promised_value
 from .with_middleware import with_middleware
 from .suppliers.crypto import random_uuid
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"

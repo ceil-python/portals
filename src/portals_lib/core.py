@@ -28,20 +28,21 @@ def create_portal(env, middleware=None):
 
     suppliers = {
         "init": init_supplier,
-        **ether_suppliers,
-        **local_suppliers,
-        **remote_suppliers,
         "open": open_supplier,
         "close": close_supplier,
         "enter": enter_supplier,
         "leave": leave_supplier,
         "guest": guest_supplier,
-        **json_packager,
         "send": create_send_supplier(),
         "receive": receive_supplier,
-        **create_queue_suppliers({"outgoing_buffer_ms": 200}),
         "crypto": crypto_supplier,
     }
+
+    suppliers.update(ether_suppliers)
+    suppliers.update(local_suppliers)
+    suppliers.update(remote_suppliers)
+    suppliers.update(json_packager)
+    suppliers.update(create_queue_suppliers({"outgoing_buffer_ms": 200}))
 
     # Apply middleware overrides
     suppliers = with_middleware(suppliers, middleware)

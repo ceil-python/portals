@@ -10,12 +10,12 @@ async def enter_supplier(data, scope):
         if not child.get("private", False)
     ]
 
+    env_descriptor = data.env.descriptor.copy()
+    env_descriptor["children"] = public_children
+
     return {
         "id": data.id,
-        "envDescriptor": {
-            **data.env.descriptor,
-            "children": public_children,
-        },
+        "envDescriptor": env_descriptor,
     }
 
 
