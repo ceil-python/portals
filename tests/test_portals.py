@@ -7,7 +7,7 @@ except ImportError:
 
 from microenv import microenv
 
-from portals import (
+from portals_lib import (
     create_client_portal,
     create_server_portal,
 )

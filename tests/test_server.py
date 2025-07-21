@@ -10,7 +10,7 @@ except ImportError:
     import json
 
 import socket
-from portals import create_server_portal
+from portals_lib import create_server_portal
 from microenv import microenv
 
 

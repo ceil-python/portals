@@ -1,6 +1,5 @@
 from supply_demand import supply_demand
 from layered_persistence import LayeredPersistence, RuntimeLayer
-from microenv import microenv
 
 from .with_middleware import with_middleware
 from .suppliers import (

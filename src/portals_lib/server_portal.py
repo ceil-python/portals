@@ -1,4 +1,4 @@
-from .core import create_portal
+from portals_lib import create_portal
 
 try:
     import uasyncio as asyncio
