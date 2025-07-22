@@ -1,6 +1,6 @@
 [project]
 name = "portals-lib"
-version = "0.0.7"
+version = "0.0.8"
 authors = [{ name = "Sergey Shkatula", email = "sergey@ceil.dev" }]
 description = "Portals"
 keywords = ["portals", "portal", "interoperation", "functional"]
@@ -18,7 +18,7 @@ requires = ["hatchling >= 1.26"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/portals"]
+packages = ["src/portals_lib"]
 
 [project.urls]
 Homepage = "https://github.com/ceil-python/portals"
