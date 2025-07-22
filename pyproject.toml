@@ -1,6 +1,6 @@
 [project]
 name = "portals-lib"
-version = "0.0.6"
+version = "0.0.7"
 authors = [{ name = "Sergey Shkatula", email = "sergey@ceil.dev" }]
 description = "Portals"
 keywords = ["portals", "portal", "interoperation", "functional"]
@@ -9,8 +9,8 @@ license = "MIT"
 readme = "README.md"
 dependencies = [
   "supply-demand==0.1.1",
-  "microenv==0.1.4",
-  "layered-persistence==0.0.2",
+  "microenv==0.1.5",
+  "layered-persistence==0.0.3",
 ]
 
 [build-system]

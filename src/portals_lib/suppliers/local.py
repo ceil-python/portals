@@ -1,3 +1,21 @@
+try:
+    import inspect
+
+    is_awaitable = inspect.isawaitable
+except ImportError:
+    # MicroPython
+    def is_awaitable(val):
+        is_awaitable = True
+        try:
+            return getattr(val, "__await__")
+        except:
+            try:
+                getattr(val, "__next__")
+            except:
+                is_awaitable = False
+        return is_awaitable
+
+
 async def enter_supplier(data, scope):
     if data.id != data.payload["payload"]["id"]:
         raise ValueError("Unauthorised")
@@ -52,7 +70,7 @@ async def local_call_supplier(data, scope):
 
     res = env.get(key, sender)(value, env, sender)
 
-    if hasattr(res, "__await__") and callable(res.__await__):
+    if is_awaitable(res):
         return await res
 
     return res

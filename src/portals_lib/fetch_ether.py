@@ -1,9 +1,6 @@
 from .client_portal import create_client_ether
 
-try:
-    import uasyncio as asyncio
-except ImportError:
-    import asyncio
+import asyncio
 
 
 def create_fetch_ether(endpoint, fetch_method):

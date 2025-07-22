@@ -1,11 +1,4 @@
-try:
-    import ujson as json
-except ImportError:
-    import json
-try:
-    import uasyncio as asyncio
-except ImportError:
-    import asyncio
+import asyncio
 
 
 def create_queue_suppliers(settings=None):
@@ -62,7 +55,6 @@ def create_queue_suppliers(settings=None):
         return await future
 
     async def queue_in(data, scope):
-        print("queue_in", data.payload)
         payload = data.payload["payload"]
         persistence = scope.demand({"type": "persistence"})
 

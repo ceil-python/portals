@@ -1,13 +1,6 @@
 import unittest
 
-try:
-    import uasyncio as asyncio
-except ImportError:
-    import asyncio
-try:
-    import ujson as json
-except ImportError:
-    import json
+import asyncio
 
 import socket
 from portals_lib import create_server_portal

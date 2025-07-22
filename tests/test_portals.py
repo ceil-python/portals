@@ -1,9 +1,6 @@
 import unittest
 
-try:
-    import uasyncio as asyncio
-except ImportError:
-    import asyncio
+import asyncio
 
 from microenv import microenv
 
@@ -23,12 +20,10 @@ class TestPortals(unittest.TestCase):
 
         async def test():
             async def test_func(param, _ref=None, caller=None, next_=False):
-                return (
-                    {
-                        "msg": "test_func called",
-                        "param": param,
-                    },
-                )
+                return {
+                    "msg": "test_func called",
+                    "param": param,
+                }
 
             env_a = microenv(
                 {"foo": "bar", "test_func": test_func},

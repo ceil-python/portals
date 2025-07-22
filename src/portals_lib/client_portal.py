@@ -1,9 +1,6 @@
 from .portals_lib import create_portal
 
-try:
-    import uasyncio as asyncio
-except ImportError:
-    import asyncio
+import asyncio
 
 
 def get_timeout_from_attempts(num_attempts):
