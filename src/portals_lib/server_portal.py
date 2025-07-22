@@ -1,6 +1,5 @@
 from .portals_lib import create_portal
-
-import asyncio
+from .micro_future import MicroFuture
 
 
 def create_server_ether():
@@ -28,8 +27,7 @@ def create_server_ether():
             if not sender:
                 return
 
-            loop = asyncio.get_event_loop()
-            fut = loop.create_future()
+            fut = MicroFuture()
             old_resolver = resolvers_by_recipient.get(sender)
             if old_resolver:
                 old_resolver["resolve"](None)
@@ -38,7 +36,7 @@ def create_server_ether():
                 "reject": fut.set_exception,
             }
 
-            return await fut
+            return await fut.wait()
 
         async def ether_send(data, scope):
             if not is_attached[0]:
